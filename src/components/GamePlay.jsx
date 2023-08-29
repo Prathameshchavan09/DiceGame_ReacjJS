@@ -10,7 +10,7 @@ const GamePlay = ({ ScoreReset }) => {
   const [FirstDice, setFirstDice] = useState(1);
   const [Score, setScore] = useState(0);
   const [Error, setError] = useState();
-  const [ShowRules,setShowRules] = useState(false)
+  const [ShowRules, setShowRules] = useState(false);
 
   const generateRandomNumbers = (min, max) => {
     console.log(Math.floor(Math.random() * (max - min) + min));
@@ -38,8 +38,7 @@ const GamePlay = ({ ScoreReset }) => {
     setScore(0);
   };
 
-  const 
-  ShowDetailRules = () => {
+  const ShowDetailRules = () => {
     setShowRules((prev) => !prev);
   };
 
@@ -67,11 +66,19 @@ const GamePlay = ({ ScoreReset }) => {
 export default GamePlay;
 
 const NumberTotalSelectorContainer = styled.div`
+  overflow: hidden;
   .NumberTotal {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    height:100%0;
+
+    @media (max-width: 760px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      height: 300px;
+    }
   }
 
   .ResetDetailbutton {
@@ -81,12 +88,18 @@ const NumberTotalSelectorContainer = styled.div`
     gap: 10px;
   }
 
-.ShowRules{
-  display: flex;
-  justify-content: center;
-
-}
-
+  .ShowRules {
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -96,5 +109,3 @@ const Button = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
 `;
-
-

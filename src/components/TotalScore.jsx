@@ -2,9 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const ScoreCounter = styled.div`
+  position: relative;
   text-align: center;
   max-width: 200px;
-  margin-top: -80px;
+  margin-top: -50px;
+
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    width: 100%;
+    
+  }
 
   h1 {
     font-size: 100px;

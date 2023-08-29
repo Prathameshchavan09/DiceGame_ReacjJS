@@ -6,15 +6,14 @@ const ShowRulesContainer = styled.div`
   width: 500px;
   display: flex;
   align-items: center;
+  margin: 10px auto;
 
-  margin: 10px 0 0 620px;
   .ContainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 50px;
     row-gap: 20px;
-
   }
 `;
 

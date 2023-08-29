@@ -1,39 +1,54 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const NumberButtons = styled.div`
   background-color: ${(props) => (props.isNumberSelected ? "black" : "white")};
   color: ${(props) => (props.isNumberSelected ? "white" : "black")};
   padding: 30px 35px;
-  height: 20px;
-  width: 20px;
-  display: grid;
   place-items: center;
   border: 1px solid black;
   font-size: 20px;
   font-weight: 800;
+
+  @media (max-width: 760px) {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
 `;
 
 const NumberSelectedContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  margin-top: 60px;
+  align-items: center;
+  margin-top: 10px;
 
   .flex {
     display: flex;
-
-    gap: 34px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
   }
 
   p {
-    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
-    font-weight: 700px;
+    font-weight: 700;
+
+    @media (max-width: 760px) {
+      align-items: center;
+      margin-left: 23px;
+      
+    }
   }
 
   .Error {
     color: red;
+  }
+
+  @media (max-width: 760px) {
+    align-items: flex-start;
+    text-align: center;
   }
 `;
 
